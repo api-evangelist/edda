@@ -1,0 +1,128 @@
+openapi: 3.1.0
+info:
+  title: EDDA Technology WordPress REST categories embed API
+  version: wp/v2
+  summary: 'Public read API over EDDA Technology content: press releases, product pages, media and taxonomies.'
+  description: 'The public WordPress REST API exposed by EDDA Technology, Inc. at https://www.eddatech.com/wp-json/. It is the only public HTTP API surface EDDA publishes: EDDA''s IQQA product line is regulated medical imaging software delivered on-premises to hospitals and does not ship a public developer API. This document was DERIVED by the API Evangelist enrichment pipeline from the live WordPress REST discovery document, restricted to routes verified to return 200 to anonymous callers. Write operations exist on the server but require authentication (WordPress application passwords) and are not documented here.'
+  contact:
+    name: EDDA Technology, Inc.
+    url: https://www.eddatech.com/contact-us/
+  x-derived-from: https://www.eddatech.com/wp-json/
+  x-derived-by: API Evangelist enrichment pipeline (local-v1)
+servers:
+- url: https://www.eddatech.com/wp-json
+  description: Production WordPress REST API
+security:
+- {}
+- applicationPassword: []
+tags:
+- name: embed
+paths:
+  /oembed/1.0/embed:
+    get:
+      operationId: getOembed
+      summary: Retrieve the oEmbed representation of a site URL
+      description: Retrieve the oEmbed representation of a site URL. Served by the public WordPress REST API on www.eddatech.com; readable anonymously.
+      tags:
+      - embed
+      parameters:
+      - name: url
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The URL of the resource for which to fetch oEmbed data.
+      - name: format
+        in: query
+        required: false
+        schema:
+          type: string
+          default: json
+      - name: maxwidth
+        in: query
+        required: false
+        schema:
+          type: string
+          default: 600
+      responses:
+        '200':
+          description: Successful response.
+          headers:
+            X-WP-Total:
+              description: Total number of matching records (collection endpoints).
+              schema:
+                type: integer
+            X-WP-TotalPages:
+              description: Total number of pages available (collection endpoints).
+              schema:
+                type: integer
+            Link:
+              description: RFC 8288 pagination links (rel="next" / rel="prev").
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type:
+                - object
+                - array
+        '400':
+          description: Invalid parameter (rest_invalid_param).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required or insufficient permissions (rest_forbidden).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: No route matched, or the resource does not exist (rest_no_route / rest_*_invalid_id).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      description: The WordPress REST API error envelope, observed live on www.eddatech.com.
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_no_route.
+          examples:
+          - rest_no_route
+          - rest_forbidden
+          - rest_invalid_param
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: HTTP status code.
+            params:
+              type: object
+              description: Per-parameter validation messages.
+            details:
+              type: object
+              description: Per-parameter structured error detail.
+      required:
+      - code
+      - message
+      - data
+      examples:
+      - code: rest_no_route
+        message: No route was found matching the URL and request method.
+        data:
+          status: 404
+  securitySchemes:
+    applicationPassword:
+      type: http
+      scheme: basic
+      description: 'WordPress application passwords (HTTP Basic: username + application password). Advertised by the API root at https://www.eddatech.com/wp-json/ under authentication.application-passwords, with the authorization endpoint at https://www.eddatech.com/wp-admin/authorize-application.php. Required only for write operations and non-public routes; all operations in this document are readable anonymously.'
