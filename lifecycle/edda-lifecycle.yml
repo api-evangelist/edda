@@ -1,0 +1,47 @@
+generated: '2026-07-20'
+method: derived
+source: https://www.eddatech.com/wp-json/
+summary: >-
+  EDDA Technology publishes no API versioning policy, no deprecation policy, no SLA and no status
+  page. The only lifecycle signal available is the namespace version carried by the WordPress REST
+  API it runs. Recorded as negative evidence — no StatusPage or Deprecation pointer is emitted.
+versioning:
+  scheme: namespace-in-path
+  current: wp/v2
+  docs: https://www.eddatech.com/wp-json/
+  provider_policy_published: false
+  notes: >-
+    Versioning is inherited from WordPress core, not authored by EDDA. Additional namespaces
+    advertised by the root document: oembed/1.0, wp-site-health/v1, wp-block-editor/v1,
+    wp-abilities/v1, genesis/v1, akismet/v1, bsf-core/v1, nps-survey/v1, wp-2fa-methods/v1,
+    regenerate-thumbnails/v1, mpdl.
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  published: false
+  probed:
+  - url: https://www.eddatech.com/status
+    status: 404
+support:
+  url: https://www.eddatech.com/contact-us/
+  phone: '+1-609-919-9889'
+deprecated_operations: []
+product_lifecycle:
+  notes: >-
+    EDDA's revenue products (the IQQA imaging platform) are regulated medical device software whose
+    lifecycle is governed by FDA clearance and EU MDR (2017/745) CE marking rather than by an API
+    deprecation policy. Product release notes are distributed to clinical customers through the
+    manuals and training portals, not publicly.
+  regulatory_basis:
+  - FDA cleared
+  - CE marked under MDR (EU) 2017/745
+  customer_channels:
+  - https://www.eddatech.com/manuals/
+  - http://www.edda-tech.com/training/

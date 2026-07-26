@@ -1,0 +1,36 @@
+{
+  "provider": "edda",
+  "sources": [
+    "edda-categories-api-openapi.yml",
+    "edda-comments-api-openapi.yml",
+    "edda-embed-api-openapi.yml",
+    "edda-media-api-openapi.yml",
+    "edda-pages-api-openapi.yml",
+    "edda-posts-api-openapi.yml",
+    "edda-search-api-openapi.yml",
+    "edda-statuses-api-openapi.yml",
+    "edda-tags-api-openapi.yml",
+    "edda-taxonomies-api-openapi.yml",
+    "edda-types-api-openapi.yml",
+    "edda-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "edda-categories-api-openapi.yml",
+    "edda-comments-api-openapi.yml",
+    "edda-embed-api-openapi.yml",
+    "edda-media-api-openapi.yml",
+    "edda-pages-api-openapi.yml",
+    "edda-posts-api-openapi.yml",
+    "edda-search-api-openapi.yml",
+    "edda-statuses-api-openapi.yml",
+    "edda-tags-api-openapi.yml",
+    "edda-taxonomies-api-openapi.yml",
+    "edda-types-api-openapi.yml",
+    "edda-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

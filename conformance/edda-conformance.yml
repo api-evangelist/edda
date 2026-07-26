@@ -1,0 +1,79 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/edda-wordpress-openapi.yml
+summary: >-
+  Cross-cutting standards conformance for the only public API surface EDDA Technology operates —
+  the WordPress REST API on www.eddatech.com. Derived from the live discovery document and verified
+  live responses on 2026-07-20. EDDA publishes no API compliance program, so no `Compliance`
+  pointer is emitted; its published regulatory posture is medical-device, not API-security.
+standards:
+- id: openapi-3.1
+  conforms: true
+  evidence: openapi/edda-wordpress-openapi.yml derived from the live wp-json discovery document
+- id: rest
+  conforms: true
+  evidence: resource-oriented collection/item paths, GET semantics, JSON representations
+- id: hateoas
+  conforms: true
+  evidence: every resource carries a _links map (self, collection, about, author, wp:term) with curies
+- id: rfc8288-web-linking
+  conforms: true
+  evidence: 'Link header with rel="next" observed on GET /wp-json/wp/v2/posts?per_page=1'
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: errors use the WordPress {code,message,data.status} envelope, not application/problem+json
+- id: oauth2
+  conforms: false
+  evidence: no oauth2 securityScheme; no OAuth endpoints; /.well-known/oauth-authorization-server returned 404
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returned 404
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returned 404
+- id: rfc9727-api-catalog
+  conforms: false
+  evidence: /.well-known/api-catalog returned 404
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: no Sunset or Deprecation headers observed; no deprecation policy published
+- id: idempotency-key
+  conforms: false
+  evidence: no idempotency key accepted or documented (see conventions/edda-conventions.yml)
+- id: pagination
+  conforms: true
+  evidence: page/per_page/offset params with X-WP-Total and X-WP-TotalPages response headers
+- id: cors
+  conforms: true
+  evidence: 'Access-Control-Expose-Headers and Access-Control-Allow-Headers present; Vary: Origin'
+- id: oembed
+  conforms: true
+  evidence: oembed/1.0 namespace with /oembed/1.0/embed returning 200
+- id: json-api
+  conforms: false
+  evidence: responses are plain JSON, not the JSON:API media type or document structure
+- id: fhir-r4
+  conforms: false
+  evidence: no FHIR resources; imaging products are desktop/on-premise, not exposed as an API
+- id: dicom
+  conforms: null
+  evidence: >-
+    IQQA products ingest and render CT/MR studies, which in practice implies DICOM handling, but EDDA
+    publishes no conformance statement — not asserted either way.
+regulatory:
+  note: >-
+    These are product/device regulatory claims published on eddatech.com, not API security
+    certifications. They are recorded for completeness and are NOT wired as a Compliance pointer.
+  claims:
+  - id: fda-clearance
+    published: true
+    evidence: https://www.eddatech.com/about/
+  - id: eu-mdr-2017-745-ce-mark
+    published: true
+    evidence: https://www.eddatech.com/about/
+  - id: soc2
+    published: false
+  - id: iso-27001
+    published: false
+  - id: hipaa
+    published: false

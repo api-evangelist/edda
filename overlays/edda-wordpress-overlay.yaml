@@ -1,0 +1,62 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the EDDA Technology WordPress REST API
+  version: 1.0.0
+extends: openapi/edda-wordpress-openapi.yml
+x-generated: '2026-07-20'
+x-method: generated
+x-source: API Evangelist enrichment pipeline (local-v1)
+actions:
+- target: $.info
+  description: Provenance and rating context for the derived specification.
+  update:
+    x-apievangelist-provider: edda
+    x-apievangelist-provenance: derived from https://www.eddatech.com/wp-json/ on 2026-07-20
+    x-apievangelist-surface-note: >-
+      This is the provider's website content API, not a product API. EDDA's IQQA imaging platform is
+      regulated medical device software with no public developer interface.
+    x-apievangelist-artifacts:
+      conventions: conventions/edda-conventions.yml
+      errors: errors/edda-problem-types.yml
+      authentication: authentication/edda-authentication.yml
+      lifecycle: lifecycle/edda-lifecycle.yml
+      conformance: conformance/edda-conformance.yml
+      data_model: data-model/edda-data-model.yml
+      mcp: mcp/edda-mcp.yml
+      skills: skills/_index.yml
+- target: $.servers[0]
+  description: Record that the base URL was verified live.
+  update:
+    x-verified: '2026-07-20'
+    x-verified-status: 200
+- target: $.components.securitySchemes.applicationPassword
+  description: Flag that the scheme is not available to third-party developers.
+  update:
+    x-public-developer-program: false
+    x-issuance: per WordPress user account by the site administrator
+- target: $.paths['/wp/v2/posts'].get
+  description: Business meaning of the posts collection for this provider.
+  update:
+    x-content-meaning: EDDA press releases, award announcements and media coverage
+    x-live-record-count: 55
+    x-counted-on: '2026-07-20'
+- target: $.paths['/wp/v2/pages'].get
+  description: Business meaning of the pages collection for this provider.
+  update:
+    x-content-meaning: >-
+      IQQA product pages (BodyImaging Liver/Lung/Kidney/Interventional, Guide, Chest, eFusion,
+      Liver Function, eQMR), company, events and manuals pages
+    x-live-record-count: 32
+    x-counted-on: '2026-07-20'
+- target: $.paths['/wp/v2/media'].get
+  description: Business meaning of the media collection for this provider.
+  update:
+    x-content-meaning: product imagery, downloadable manuals and conference video
+    x-live-record-count: 81
+    x-counted-on: '2026-07-20'
+- target: $.paths['/wp/v2/search'].get
+  description: Note the denormalised projection this endpoint returns.
+  update:
+    x-content-meaning: cross-content keyword search over EDDA posts, pages and terms
+    x-live-record-count: 47
+    x-counted-on: '2026-07-20'

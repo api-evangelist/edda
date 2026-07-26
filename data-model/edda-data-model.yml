@@ -1,0 +1,133 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/edda-wordpress-openapi.yml
+derived_from_live: https://www.eddatech.com/wp-json/
+summary: >-
+  Entity-relationship graph for EDDA Technology's public content API. Derived from the WordPress
+  REST route table and the _links relations returned on live resources. Counts are live totals read
+  from the X-WP-Total response header on 2026-07-20.
+id_scheme:
+  style: integer
+  notes: All content and term entities share an auto-increment integer ID space; no typed prefixes.
+entities:
+- name: Post
+  path: /wp/v2/posts
+  operations: [listPosts, getPost]
+  live_count: 55
+  description: Press releases, media coverage and company announcements.
+  key_fields: [id, date, modified, slug, status, title, content, excerpt, author, featured_media, categories, tags, _links]
+  relationships:
+  - type: belongs_to
+    target: User
+    via: author
+  - type: has_one
+    target: Media
+    via: featured_media
+  - type: has_many
+    target: Category
+    via: categories
+  - type: has_many
+    target: Tag
+    via: tags
+  - type: has_many
+    target: Comment
+    via: post
+- name: Page
+  path: /wp/v2/pages
+  operations: [listPages, getPage]
+  live_count: 32
+  description: Product pages (IQQA-Liver, IQQA-Lung, IQQA-Guide, IQQA-eFusion, ...), about, events, manuals.
+  key_fields: [id, slug, title, content, parent, menu_order, author, featured_media, _links]
+  relationships:
+  - type: belongs_to
+    target: User
+    via: author
+  - type: belongs_to
+    target: Page
+    via: parent
+  - type: has_many
+    target: Page
+    via: parent
+  - type: has_one
+    target: Media
+    via: featured_media
+- name: Media
+  path: /wp/v2/media
+  operations: [listMedia, getMedia]
+  live_count: 81
+  description: Images, product screenshots, downloadable manuals and video assets.
+  key_fields: [id, slug, media_type, mime_type, source_url, media_details, post, author]
+  relationships:
+  - type: belongs_to
+    target: Post
+    via: post
+  - type: belongs_to
+    target: User
+    via: author
+- name: Category
+  path: /wp/v2/categories
+  operations: [listCategories, getCategory]
+  live_count: 2
+  taxonomy: category
+  key_fields: [id, name, slug, parent, count]
+  relationships:
+  - type: belongs_to
+    target: Category
+    via: parent
+  - type: has_many
+    target: Post
+    via: categories
+- name: Tag
+  path: /wp/v2/tags
+  operations: [listTags, getTag]
+  live_count: 0
+  taxonomy: post_tag
+  key_fields: [id, name, slug, count]
+  relationships:
+  - type: has_many
+    target: Post
+    via: tags
+- name: Comment
+  path: /wp/v2/comments
+  operations: [listComments, getComment]
+  live_count: 0
+  key_fields: [id, post, parent, author_name, date, content, status]
+  relationships:
+  - type: belongs_to
+    target: Post
+    via: post
+  - type: belongs_to
+    target: Comment
+    via: parent
+- name: User
+  path: /wp/v2/users
+  operations: [listUsers, getUser]
+  live_count: 1
+  description: Public post authors.
+  key_fields: [id, name, slug, description, avatar_urls]
+  relationships:
+  - type: has_many
+    target: Post
+    via: author
+- name: Type
+  path: /wp/v2/types
+  operations: [listTypes, getType]
+  description: Registered content-type descriptors (post, page, attachment, fl-builder-template).
+- name: Taxonomy
+  path: /wp/v2/taxonomies
+  operations: [listTaxonomies, getTaxonomy]
+  description: Registered taxonomy descriptors (category, post_tag).
+- name: SearchResult
+  path: /wp/v2/search
+  operations: [search]
+  live_count: 47
+  description: Denormalised search projection over posts, pages and terms.
+  key_fields: [id, title, url, type, subtype]
+  relationships:
+  - type: belongs_to
+    target: Post
+    via: id
+  - type: belongs_to
+    target: Page
+    via: id
+render: null

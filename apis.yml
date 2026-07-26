@@ -1,24 +1,243 @@
 aid: edda
-name: EDDA
-description: 'EDDA is a company surfaced as a portfolio company of softbank-vision-fund and added to the
-  API Evangelist network as a stub for enrichment. Sector: health-tech. This profile is a lead awaiting
-  the enrichment pipeline.'
+name: EDDA Technology
+description: EDDA Technology, Inc. is a Princeton, New Jersey medical imaging software company behind the IQQA platform
+  for computer-assisted radiology and surgery. IQQA delivers 3D quantitative image analysis, automated segmentation
+  and volumetric measurement over CT and MR studies, supporting pre-surgical planning and simulation, intra-operative
+  guidance and monitoring, post-operative follow-up evaluation, and clinical training across liver, lung, kidney
+  and interventional oncology. Products include IQQA-BodyImaging, IQQA-Guide, IQQA-Chest, IQQA-Liver, IQQA-Liver
+  Function, IQQA-eQMR and the IQQA-eFusion edge-AI surgical navigation system. The company is FDA cleared and CE
+  marked under EU MDR 2017/745, and raised a US$150 million round led by SoftBank Vision Fund 2 with OrbiMed participation
+  in April 2021. EDDA publishes no developer API for IQQA — it is regulated medical device software deployed on-premises
+  in hospitals — so the only public API surface catalogued here is the WordPress REST API serving eddatech.com content.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.eddatech.com/wp-content/uploads/2019/10/cropped-EDDA-Technology-Icon-192x192.png
 url: https://raw.githubusercontent.com/api-evangelist/edda/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - softbank-vision-fund
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-public-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Health Tech
-apis: []
+- Medical Imaging
+- Radiology
+- Surgery
+- Oncology
+- Artificial Intelligence
+- Medical Devices
+- Healthcare
+- Clinical Software
+apis:
+- aid: edda:edda-categories-api
+  name: EDDA Technology categories API
+  description: Post categories.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - categories
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-categories-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+- aid: edda:edda-comments-api
+  name: EDDA Technology comments API
+  description: Approved comments.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - comments
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-comments-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+- aid: edda:edda-embed-api
+  name: EDDA Technology embed API
+  description: The embed API from EDDA Technology — 1 operation(s) for embed.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - embed
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-embed-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+- aid: edda:edda-media-api
+  name: EDDA Technology media API
+  description: Images, manuals and video assets.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - media
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-media-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+- aid: edda:edda-pages-api
+  name: EDDA Technology pages API
+  description: Product, company and event pages.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - pages
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-pages-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+- aid: edda:edda-posts-api
+  name: EDDA Technology posts API
+  description: Press releases and news announcements.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - posts
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-posts-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+- aid: edda:edda-search-api
+  name: EDDA Technology search API
+  description: Cross-content search.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - search
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-search-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+- aid: edda:edda-statuses-api
+  name: EDDA Technology statuses API
+  description: Post statuses.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - statuses
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-statuses-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+- aid: edda:edda-tags-api
+  name: EDDA Technology tags API
+  description: Post tags.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - tags
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-tags-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+- aid: edda:edda-taxonomies-api
+  name: EDDA Technology taxonomies API
+  description: Registered taxonomies.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - taxonomies
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-taxonomies-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+- aid: edda:edda-types-api
+  name: EDDA Technology types API
+  description: Registered content types.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - types
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-types-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+- aid: edda:edda-users-api
+  name: EDDA Technology users API
+  description: Public post authors.
+  humanURL: https://www.eddatech.com/wp-json/
+  baseURL: https://www.eddatech.com/wp-json
+  tags:
+  - users
+  properties:
+  - type: OpenAPI
+    url: openapi/edda-users-api-openapi.yml
+  - type: Discovery
+    url: openapi/edda-wordpress-rest-discovery.json
+common:
+- type: DomainSecurity
+  url: security/edda-domain-security.yml
+- type: Website
+  url: https://www.eddatech.com/
+- type: About
+  url: https://www.eddatech.com/about/
+- type: Products
+  url: https://www.eddatech.com/products/
+- type: Blog
+  url: https://www.eddatech.com/press-releases/
+- type: BlogRSS
+  url: https://www.eddatech.com/feed/
+- type: Support
+  url: https://www.eddatech.com/contact-us/
+- type: Events
+  url: https://www.eddatech.com/events/
+- type: Careers
+  url: https://www.eddatech.com/about/careers/
+- type: Team
+  url: https://www.eddatech.com/about/management-team/
+- type: Publications
+  url: https://www.eddatech.com/talks-publications/
+- type: Authentication
+  url: authentication/edda-authentication.yml
+- type: Conventions
+  url: conventions/edda-conventions.yml
+- type: ErrorCatalog
+  url: errors/edda-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/edda-lifecycle.yml
+- type: Conformance
+  url: conformance/edda-conformance.yml
+- type: DataModel
+  url: data-model/edda-data-model.yml
+- type: WellKnown
+  url: well-known/edda-well-known.yml
+- type: MCPServer
+  url: mcp/edda-mcp.yml
+- type: LLMsTxt
+  url: llms/edda-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v1

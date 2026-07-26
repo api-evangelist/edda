@@ -1,0 +1,81 @@
+# EDDA Technology, Inc.
+
+> EDDA Technology is a Princeton, New Jersey medical imaging software company behind the IQQA®
+> platform for computer-assisted radiology and surgery — 3D quantitative image analysis, pre-surgical
+> planning and simulation, intra-operative guidance, and post-operative follow-up for liver, lung,
+> kidney and interventional oncology. The company is FDA cleared and CE marked under EU MDR
+> 2017/745, and raised a US$150M round led by SoftBank Vision Fund 2 with OrbiMed in April 2021.
+
+EDDA does not publish a developer API for its IQQA products — they are regulated medical device
+software delivered to hospitals and imaging centers, not a cloud API. The only public HTTP API
+surface EDDA operates is the WordPress REST API serving its own website content. Everything below
+reflects what is actually published; nothing here is a promised or planned API.
+
+## APIs
+
+- [EDDA Technology WordPress REST API](https://www.eddatech.com/wp-json/): Public, anonymous,
+  read-only content API. 21 catalogued operations over posts (press releases), pages (IQQA product
+  pages), media (imagery and manuals), categories, tags, comments, authors, content types,
+  taxonomies, statuses, search and oEmbed. Namespace `wp/v2`. Base URL
+  `https://www.eddatech.com/wp-json`.
+
+## Specs
+
+- [OpenAPI 3.1 (derived)](openapi/edda-wordpress-openapi.yml): The public read surface, derived from
+  the live WordPress discovery document and verified operation by operation.
+- [WordPress REST discovery document](openapi/edda-wordpress-rest-discovery.json): The verbatim
+  `/wp-json/` root — 12 namespaces, 157 route descriptors.
+- [OpenAPI Overlay](overlays/edda-wordpress-overlay.yaml): API Evangelist enhancements over the
+  derived spec.
+
+## Conventions and semantics
+
+- [API conventions](conventions/edda-conventions.yml): page/per_page pagination with `X-WP-Total`
+  and `X-WP-TotalPages`, RFC 8288 `Link` headers, `_fields` sparse fieldsets, `_embed` expansion,
+  `context` field-set switching, HAL-like `_links` hypermedia. No idempotency contract; no
+  documented rate limits.
+- [Error catalog](errors/edda-problem-types.yml): the WordPress `{code, message, data.status}`
+  envelope — `rest_no_route`, `rest_forbidden`, `rest_invalid_param`, `rest_post_invalid_id`. Not
+  RFC 9457.
+- [Authentication](authentication/edda-authentication.yml): anonymous for all public reads; HTTP
+  Basic via WordPress application passwords for writes. No OAuth, no OpenID Connect, no public API
+  key program.
+- [Data model](data-model/edda-data-model.yml): Post, Page, Media, Category, Tag, Comment, User,
+  Type, Taxonomy, SearchResult and their relationships.
+- [Conformance](conformance/edda-conformance.yml): REST, HATEOAS, RFC 8288, CORS and oEmbed yes;
+  OAuth2, OIDC, RFC 9457, RFC 9116 and RFC 8594 no.
+- [Lifecycle](lifecycle/edda-lifecycle.yml): namespace versioning only. No deprecation policy, no
+  SLA, no status page.
+- [Well-known](well-known/edda-well-known.yml): no `/.well-known/` discovery surface — security.txt,
+  openid-configuration, oauth-authorization-server, api-catalog and ai-plugin.json all return 404.
+
+## Agent surfaces
+
+- [Agent Skills](skills/_index.yml): packaged operating instructions for reading EDDA's news and
+  product content correctly.
+- [MCP server (candidate)](mcp/edda-mcp.yml): a proposed read-only tool surface. EDDA hosts no MCP
+  server.
+
+## Docs
+
+- [Website](https://www.eddatech.com/)
+- [About EDDA](https://www.eddatech.com/about/)
+- [Products](https://www.eddatech.com/products/)
+- [Press releases and news](https://www.eddatech.com/press-releases/)
+- [News RSS feed](https://www.eddatech.com/feed/)
+- [Manuals](https://www.eddatech.com/manuals/)
+- [Training and tutorials](http://www.edda-tech.com/training/)
+- [Talks and publications](https://www.eddatech.com/talks-publications/)
+- [Events](https://www.eddatech.com/events/)
+- [Management team](https://www.eddatech.com/about/management-team/)
+- [Careers](https://www.eddatech.com/about/careers/)
+- [Contact](https://www.eddatech.com/contact-us/)
+- [Site map](https://www.eddatech.com/site-map/)
+
+## Not published
+
+EDDA publishes none of the following as of 2026-07-20: developer portal, API reference, getting
+started guide, SDKs or client libraries, CLI, sandbox or test credentials, Postman collection,
+changelog, status page, deprecation policy, roadmap, pricing page, terms of service, privacy policy,
+security.txt, vulnerability disclosure program, trust center, webhooks, AsyncAPI, or gRPC/protobuf
+definitions.

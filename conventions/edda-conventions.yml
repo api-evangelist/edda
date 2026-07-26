@@ -1,0 +1,98 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/edda-wordpress-openapi.yml
+observed_from: https://www.eddatech.com/wp-json/wp/v2/posts
+summary: >-
+  Cross-cutting request/response semantics for the public WordPress REST API on www.eddatech.com,
+  derived from the live discovery document and verified against live responses on 2026-07-20.
+  These are WordPress core conventions as EDDA runs them, not a convention program EDDA authored.
+authentication:
+  style: anonymous read; HTTP Basic (WordPress application passwords) for writes
+  artifact: authentication/edda-authentication.yml
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency key header or parameter is accepted or documented. The public surface is
+    read-only (GET), so idempotency is a property of the method rather than a provider contract.
+    No `Idempotency` pointer is emitted for this provider.
+pagination:
+  style: page-number (offset also supported)
+  request_params:
+  - name: page
+    default: 1
+    minimum: 1
+  - name: per_page
+    default: 10
+    minimum: 1
+    maximum: 100
+  - name: offset
+    description: Offset the result set by a specific number of items.
+  response_headers:
+  - name: X-WP-Total
+    description: Total number of matching records.
+  - name: X-WP-TotalPages
+    description: Total number of pages available.
+  - name: Link
+    description: RFC 8288 link header carrying rel="next" and rel="prev".
+  cors_exposed: true
+  cors_note: Access-Control-Expose-Headers lists X-WP-Total, X-WP-TotalPages, Link.
+filtering_and_sorting:
+  search_param: search
+  date_filters: [after, before, modified_after, modified_before]
+  id_filters: [include, exclude]
+  ordering: order (asc|desc) + orderby (date, id, title, slug, relevance, modified, author)
+field_selection:
+  sparse_fields:
+    supported: true
+    param: _fields
+    description: Comma-separated list of fields to limit the response to.
+  embedding:
+    supported: true
+    param: _embed
+    description: Inlines linked resources (author, featured media, terms) under _embedded.
+  context:
+    param: context
+    values: [view, embed, edit]
+    description: Controls which field set is returned; edit requires authentication.
+hypermedia:
+  style: HAL-like _links object on every resource
+  description: >-
+    Each resource carries a _links map (self, collection, about, author, replies, wp:featuredmedia,
+    wp:term, curies) making the surface traversable without out-of-band URL construction.
+versioning:
+  scheme: namespace-in-path
+  current: wp/v2
+  namespaces_advertised:
+  - wp/v2
+  - oembed/1.0
+  - wp-site-health/v1
+  - wp-block-editor/v1
+  - wp-abilities/v1
+  - genesis/v1
+  - akismet/v1
+  artifact: lifecycle/edda-lifecycle.yml
+error_envelope:
+  format: wordpress-rest
+  rfc9457: false
+  content_type: application/json
+  shape:
+    code: machine-readable error slug (e.g. rest_no_route)
+    message: human-readable message
+    data.status: HTTP status code
+    data.params: per-parameter validation messages (400 only)
+    data.details: structured per-parameter detail (400 only)
+  artifact: errors/edda-problem-types.yml
+rate_limiting:
+  documented: false
+  signaling_headers: []
+  notes: >-
+    No rate-limit headers were observed on live responses and no rate-limit policy is published.
+request_tracing:
+  request_id_header: none observed
+caching:
+  observed_headers: []
+  notes: Responses carry X-Robots-Tag noindex and X-Content-Type-Options nosniff; no cache directives observed.
+transport:
+  https_only: true
+  server: Microsoft-IIS/8.5
+  content_type: application/json; charset=UTF-8

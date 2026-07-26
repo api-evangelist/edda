@@ -1,0 +1,80 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/edda-wordpress-openapi.yml
+verified_against: https://www.eddatech.com/wp-json/
+format: wordpress-rest
+rfc9457: false
+envelope:
+  content_type: application/json
+  fields:
+    code: machine-readable error slug
+    message: human-readable message
+    data.status: HTTP status code
+    data.params: per-parameter validation messages (400 only)
+    data.details: structured per-parameter detail (400 only)
+  example: '{"code":"rest_no_route","message":"No route was found matching the URL and request method.","data":{"status":404}}'
+notes: >-
+  EDDA Technology publishes no error reference. This catalogue was derived from the OpenAPI captured
+  for the public WordPress REST API and confirmed by issuing live failing requests against
+  www.eddatech.com on 2026-07-20. Codes are WordPress core error slugs; the responses recorded below
+  are the exact bodies returned by EDDA's host.
+problems:
+- status: 404
+  code: rest_no_route
+  title: No route matched
+  detail: No route was found matching the URL and request method.
+  remediation: Check the namespace and path against https://www.eddatech.com/wp-json/ before retrying.
+  observed: true
+  observed_request: GET /wp-json/wp/v2/nonexistentroute
+  source_operation: openapi/edda-wordpress-openapi.yml#listPosts
+- status: 404
+  code: rest_post_invalid_id
+  title: Invalid post ID
+  detail: Invalid post ID.
+  remediation: The post does not exist or is not published. Discover valid IDs via listPosts.
+  observed: true
+  observed_request: GET /wp-json/wp/v2/posts/999999
+  source_operation: openapi/edda-wordpress-openapi.yml#getPost
+- status: 404
+  code: rest_page_invalid_id
+  title: Invalid page ID
+  detail: Invalid post ID (pages share the post ID space).
+  remediation: Discover valid IDs via listPages.
+  observed: false
+  source_operation: openapi/edda-wordpress-openapi.yml#getPage
+- status: 404
+  code: rest_term_invalid
+  title: Invalid term ID
+  detail: Term does not exist.
+  remediation: Discover valid term IDs via listCategories or listTags.
+  observed: false
+  source_operation: openapi/edda-wordpress-openapi.yml#getCategory
+- status: 401
+  code: rest_forbidden
+  title: Not allowed
+  detail: Sorry, you are not allowed to do that.
+  remediation: >-
+    The route requires authentication. EDDA issues no public developer credentials; only WordPress
+    application passwords held by site users can satisfy it. Stay on the anonymous read surface.
+  observed: true
+  observed_request: GET /wp-json/wp/v2/settings
+  source_operation: openapi/edda-wordpress-openapi.yml#listPosts
+- status: 400
+  code: rest_invalid_param
+  title: Invalid parameter
+  detail: 'Invalid parameter(s): <name>'
+  remediation: >-
+    Read data.details.<param>.message for the constraint that failed (e.g. per_page must be between
+    1 and 100 inclusive) and correct the request.
+  observed: true
+  observed_request: GET /wp-json/wp/v2/posts?per_page=999
+  observed_body: '{"code":"rest_invalid_param","message":"Invalid parameter(s): per_page","data":{"status":400,"params":{"per_page":"per_page
+    must be between 1 (inclusive) and 100 (inclusive)"}}}'
+  source_operation: openapi/edda-wordpress-openapi.yml#listPosts
+- status: 400
+  code: rest_out_of_bounds
+  title: Parameter out of bounds
+  detail: A numeric parameter fell outside its allowed range.
+  remediation: Nested under data.details; clamp the parameter to the documented minimum/maximum.
+  observed: true
+  source_operation: openapi/edda-wordpress-openapi.yml#listPosts

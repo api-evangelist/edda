@@ -1,0 +1,46 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/edda-wordpress-openapi.yml
+summary: >-
+  EDDA Technology publishes no MCP server. This is a CANDIDATE manifest derived from the public
+  WordPress REST API operations catalogued in openapi/edda-wordpress-openapi.yml — a read-only
+  content surface an agent could safely be given. It is a proposal by API Evangelist, not a
+  provider claim, and nothing is hosted.
+server:
+  name: edda
+  transport: http
+  url: null
+  upstream: https://www.eddatech.com/wp-json
+  auth: none (public read surface)
+tools:
+- name: list_posts
+  description: List EDDA press releases and news announcements, newest first.
+  source_operation: openapi/edda-wordpress-openapi.yml#listPosts
+- name: get_post
+  description: Retrieve a single EDDA press release by ID.
+  source_operation: openapi/edda-wordpress-openapi.yml#getPost
+- name: list_pages
+  description: List EDDA site pages including the IQQA product pages.
+  source_operation: openapi/edda-wordpress-openapi.yml#listPages
+- name: get_page
+  description: Retrieve a single EDDA page by ID.
+  source_operation: openapi/edda-wordpress-openapi.yml#getPage
+- name: search_content
+  description: Search EDDA posts, pages and terms by keyword.
+  source_operation: openapi/edda-wordpress-openapi.yml#search
+- name: list_media
+  description: List EDDA media assets including product imagery and downloadable manuals.
+  source_operation: openapi/edda-wordpress-openapi.yml#listMedia
+- name: get_media
+  description: Retrieve a single EDDA media asset by ID.
+  source_operation: openapi/edda-wordpress-openapi.yml#getMedia
+- name: list_categories
+  description: List EDDA post categories.
+  source_operation: openapi/edda-wordpress-openapi.yml#listCategories
+- name: get_oembed
+  description: Retrieve the oEmbed representation of an eddatech.com URL.
+  source_operation: openapi/edda-wordpress-openapi.yml#getOembed
+notes:
+- Read-only by construction; no write tools are proposed.
+- Rate limits are undocumented — a real deployment should throttle conservatively.

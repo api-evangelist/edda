@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.eddatech.com/
+host: https://www.eddatech.com
+summary: >-
+  No /.well-known/ discovery surface is published on the EDDA Technology web/API host. Every
+  RFC-registered path probed on 2026-07-20 returned 404. Recorded as valid negative evidence:
+  EDDA publishes no security.txt (RFC 9116), no OpenID Connect / OAuth authorization-server
+  metadata, no api-catalog (RFC 9727) and no ai-plugin manifest.
+documents:
+- path: /.well-known/security.txt
+  standard: RFC 9116
+  status: 404
+- path: /.well-known/openid-configuration
+  standard: OpenID Connect Discovery 1.0
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  standard: RFC 8414
+  status: 404
+- path: /.well-known/api-catalog
+  standard: RFC 9727
+  status: 404
+- path: /.well-known/ai-plugin.json
+  standard: OpenAI plugin manifest
+  status: 404
+discovery_alternatives:
+- path: /wp-json/
+  description: >-
+    WordPress REST API discovery document — the one machine-readable API index EDDA does publish.
+    Returns 200 with namespaces, 157 route descriptors, per-route args and the supported
+    authentication scheme. Captured verbatim at openapi/edda-wordpress-rest-discovery.json.
+  status: 200
+- path: /feed/
+  description: RSS 2.0 feed of press releases and news posts.
+  status: 200
+- path: /site-map/
+  description: Human-readable site map.
+  status: 200
