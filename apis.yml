@@ -189,6 +189,8 @@ apis:
   - type: Discovery
     url: openapi/edda-wordpress-rest-discovery.json
 common:
+- type: Overlay
+  url: overlays/edda-wordpress-overlay.yaml
 - type: DomainSecurity
   url: security/edda-domain-security.yml
 - type: Website
