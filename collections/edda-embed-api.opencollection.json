@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EDDA Technology WordPress REST categories embed API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "embed",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve the oEmbed representation of a site URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eddatech.com/wp-json/oembed/1.0/embed",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The URL of the resource for which to fetch oEmbed data."
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxwidth",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve the oEmbed representation of a site URL. Served by the public WordPress REST API on www.eddatech.com; readable anonymously."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

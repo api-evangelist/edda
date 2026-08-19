@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EDDA Technology WordPress REST categories taxonomies API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "taxonomies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List registered taxonomies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eddatech.com/wp-json/wp/v2/taxonomies",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Limit results to taxonomies associated with a specific post type."
+              }
+            ]
+          },
+          "docs": "List registered taxonomies. Served by the public WordPress REST API on www.eddatech.com; readable anonymously."
+        },
+        {
+          "info": {
+            "name": "Retrieve a single taxonomy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eddatech.com/wp-json/wp/v2/taxonomies/:taxonomy",
+            "params": [
+              {
+                "name": "taxonomy",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the resource."
+              },
+              {
+                "name": "taxonomy",
+                "value": "",
+                "type": "query",
+                "description": "An alphanumeric identifier for the taxonomy."
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              }
+            ]
+          },
+          "docs": "Retrieve a single taxonomy. Served by the public WordPress REST API on www.eddatech.com; readable anonymously."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

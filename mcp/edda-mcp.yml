@@ -2,11 +2,10 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: openapi/edda-wordpress-openapi.yml
-summary: >-
-  EDDA Technology publishes no MCP server. This is a CANDIDATE manifest derived from the public
-  WordPress REST API operations catalogued in openapi/edda-wordpress-openapi.yml — a read-only
-  content surface an agent could safely be given. It is a proposal by API Evangelist, not a
-  provider claim, and nothing is hosted.
+summary: EDDA Technology publishes no MCP server. This is a CANDIDATE manifest derived from the public
+  WordPress REST API operations catalogued in openapi/edda-wordpress-openapi.yml — a read-only content
+  surface an agent could safely be given. It is a proposal by API Evangelist, not a provider claim, and
+  nothing is hosted.
 server:
   name: edda
   transport: http
@@ -44,3 +43,9 @@ tools:
 notes:
 - Read-only by construction; no write tools are proposed.
 - Rate limits are undocumented — a real deployment should throttle conservatively.
+deployment:
+  mode: none
+  verified: derived
+  tools: 9
+  checked: '2026-08-12'
+  source: catalog MCP census

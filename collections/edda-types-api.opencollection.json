@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EDDA Technology WordPress REST categories types API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List registered content types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eddatech.com/wp-json/wp/v2/types",
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              }
+            ]
+          },
+          "docs": "List registered content types. Served by the public WordPress REST API on www.eddatech.com; readable anonymously."
+        },
+        {
+          "info": {
+            "name": "Retrieve a single content type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.eddatech.com/wp-json/wp/v2/types/:type",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the resource."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "An alphanumeric identifier for the post type."
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Scope under which the request is made; determines fields present in response."
+              }
+            ]
+          },
+          "docs": "Retrieve a single content type. Served by the public WordPress REST API on www.eddatech.com; readable anonymously."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
