@@ -50,6 +50,8 @@ apis:
   humanURL: https://www.eddatech.com/wp-json/
   baseURL: https://www.eddatech.com/wp-json
   tags:
+  - Categories
+  tags_raw:
   - categories
   properties:
   - type: OpenAPI
@@ -62,6 +64,8 @@ apis:
   humanURL: https://www.eddatech.com/wp-json/
   baseURL: https://www.eddatech.com/wp-json
   tags:
+  - Comments
+  tags_raw:
   - comments
   properties:
   - type: OpenAPI
@@ -74,6 +78,8 @@ apis:
   humanURL: https://www.eddatech.com/wp-json/
   baseURL: https://www.eddatech.com/wp-json
   tags:
+  - Embed
+  tags_raw:
   - embed
   properties:
   - type: OpenAPI
@@ -86,6 +92,8 @@ apis:
   humanURL: https://www.eddatech.com/wp-json/
   baseURL: https://www.eddatech.com/wp-json
   tags:
+  - Media
+  tags_raw:
   - media
   properties:
   - type: OpenAPI
@@ -98,6 +106,8 @@ apis:
   humanURL: https://www.eddatech.com/wp-json/
   baseURL: https://www.eddatech.com/wp-json
   tags:
+  - Pages
+  tags_raw:
   - pages
   properties:
   - type: OpenAPI
@@ -110,6 +120,8 @@ apis:
   humanURL: https://www.eddatech.com/wp-json/
   baseURL: https://www.eddatech.com/wp-json
   tags:
+  - Posts
+  tags_raw:
   - posts
   properties:
   - type: OpenAPI
@@ -122,6 +134,8 @@ apis:
   humanURL: https://www.eddatech.com/wp-json/
   baseURL: https://www.eddatech.com/wp-json
   tags:
+  - Search
+  tags_raw:
   - search
   properties:
   - type: OpenAPI
@@ -134,6 +148,8 @@ apis:
   humanURL: https://www.eddatech.com/wp-json/
   baseURL: https://www.eddatech.com/wp-json
   tags:
+  - Status
+  tags_raw:
   - statuses
   properties:
   - type: OpenAPI
@@ -146,6 +162,8 @@ apis:
   humanURL: https://www.eddatech.com/wp-json/
   baseURL: https://www.eddatech.com/wp-json
   tags:
+  - Tags
+  tags_raw:
   - tags
   properties:
   - type: OpenAPI
@@ -170,6 +188,8 @@ apis:
   humanURL: https://www.eddatech.com/wp-json/
   baseURL: https://www.eddatech.com/wp-json
   tags:
+  - Types
+  tags_raw:
   - types
   properties:
   - type: OpenAPI
@@ -182,6 +202,8 @@ apis:
   humanURL: https://www.eddatech.com/wp-json/
   baseURL: https://www.eddatech.com/wp-json
   tags:
+  - User
+  tags_raw:
   - users
   properties:
   - type: OpenAPI
