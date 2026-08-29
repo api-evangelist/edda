@@ -9,6 +9,17 @@ description: EDDA Technology, Inc. is a Princeton, New Jersey medical imaging so
   marked under EU MDR 2017/745, and raised a US$150 million round led by SoftBank Vision Fund 2 with OrbiMed participation
   in April 2021. EDDA publishes no developer API for IQQA — it is regulated medical device software deployed on-premises
   in hospitals — so the only public API surface catalogued here is the WordPress REST API serving eddatech.com content.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
