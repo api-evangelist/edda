@@ -34,6 +34,9 @@ accessModel:
   method: derived
 image: https://www.eddatech.com/wp-content/uploads/2019/10/cropped-EDDA-Technology-Icon-192x192.png
 url: https://raw.githubusercontent.com/api-evangelist/edda/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "EDDA publishes no developer API for IQQA — it is regulated medical device software deployed on-premises in hospitals — so the only public API surface catalogued here is the WordPress REST API serving "
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
