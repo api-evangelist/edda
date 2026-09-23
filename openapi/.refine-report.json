@@ -1,18 +1,7 @@
 {
   "provider": "edda",
   "sources": [
-    "edda-categories-api-openapi.yml",
-    "edda-comments-api-openapi.yml",
-    "edda-embed-api-openapi.yml",
-    "edda-media-api-openapi.yml",
-    "edda-pages-api-openapi.yml",
-    "edda-posts-api-openapi.yml",
-    "edda-search-api-openapi.yml",
-    "edda-statuses-api-openapi.yml",
-    "edda-tags-api-openapi.yml",
-    "edda-taxonomies-api-openapi.yml",
-    "edda-types-api-openapi.yml",
-    "edda-users-api-openapi.yml"
+    "_ae-authored/edda-wordpress-openapi.yml"
   ],
   "outputs": [
     "edda-categories-api-openapi.yml",
@@ -32,19 +21,23 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "edda-categories-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "edda-comments-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "edda-embed-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "edda-media-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "edda-pages-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "edda-posts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "edda-search-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "edda-statuses-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "edda-tags-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "edda-taxonomies-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "edda-types-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "edda-users-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "edda-wordpress-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "edda-wordpress-openapi.yml: declared missing tag: embed",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "edda-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "edda-comments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "edda-embed-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "edda-media-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "edda-pages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "edda-posts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "edda-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "edda-statuses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "edda-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "edda-taxonomies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "edda-types-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "edda-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

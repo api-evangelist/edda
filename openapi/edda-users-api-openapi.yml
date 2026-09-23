@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: EDDA Technology WordPress REST categories Users API
+  title: EDDA Technology WordPress REST Users API
   version: wp/v2
   summary: 'Public read API over EDDA Technology content: press releases, product pages, media and taxonomies.'
-  description: 'The public WordPress REST API exposed by EDDA Technology, Inc. at https://www.eddatech.com/wp-json/. It is the only public HTTP API surface EDDA publishes: EDDA''s IQQA product line is regulated medical imaging software delivered on-premises to hospitals and does not ship a public developer API. This document was DERIVED by the API Evangelist enrichment pipeline from the live WordPress REST discovery document, restricted to routes verified to return 200 to anonymous callers. Write operations exist on the server but require authentication (WordPress application passwords) and are not documented here.'
+  description: The public WordPress REST API exposed by EDDA Technology, Inc.
   contact:
     name: EDDA Technology, Inc.
     url: https://www.eddatech.com/contact-us/
@@ -16,7 +16,7 @@ security:
 - {}
 - applicationPassword: []
 tags:
-- name: users
+- name: Users
   description: Public post authors.
 paths:
   /wp/v2/users:
@@ -25,7 +25,7 @@ paths:
       summary: List public authors
       description: List public authors. Served by the public WordPress REST API on www.eddatech.com; readable anonymously.
       tags:
-      - users
+      - Users
       parameters:
       - name: context
         in: query
@@ -210,7 +210,7 @@ paths:
       summary: Retrieve a single author by ID
       description: Retrieve a single author by ID. Served by the public WordPress REST API on www.eddatech.com; readable anonymously.
       tags:
-      - users
+      - Users
       parameters:
       - name: id
         in: path
