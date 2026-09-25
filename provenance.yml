@@ -6,78 +6,6 @@ artifacts:
   authentication/edda-authentication.yml:
     method: searched
     evidence: declared in the artifact
-  collections/edda-categories-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-categories-api
-  collections/edda-categories-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-categories-api
-  collections/edda-comments-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-comments-api
-  collections/edda-comments-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-comments-api
-  collections/edda-embed-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-embed-api
-  collections/edda-embed-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-embed-api
-  collections/edda-media-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-media-api
-  collections/edda-media-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-media-api
-  collections/edda-pages-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-pages-api
-  collections/edda-pages-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-pages-api
-  collections/edda-posts-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-posts-api
-  collections/edda-posts-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-posts-api
-  collections/edda-search-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-search-api
-  collections/edda-search-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-search-api
-  collections/edda-statuses-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-statuses-api
-  collections/edda-statuses-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-statuses-api
-  collections/edda-tags-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-tags-api
-  collections/edda-tags-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-tags-api
-  collections/edda-taxonomies-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-taxonomies-api
-  collections/edda-taxonomies-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-taxonomies-api
-  collections/edda-types-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-types-api
-  collections/edda-types-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-types-api
-  collections/edda-users-api.opencollection.json:
-    method: derived
-    evidence: openapi/edda-users-api
-  collections/edda-users-api.postman_collection.json:
-    method: derived
-    evidence: openapi/edda-users-api
   collections/edda-wordpress-rest-discovery.opencollection.json:
     method: derived
     evidence: openapi/edda-wordpress-rest-discovery
@@ -93,55 +21,10 @@ artifacts:
   errors/edda-problem-types.yml:
     method: derived
     evidence: declared in the artifact
-  kin/checks-2026-09-05T072335.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-06T210741.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-07T135032.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-10T093022.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-10T111628.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-11T211707.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-12T193225.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-17T064519.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T080027.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T082702.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T114122.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T165047.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T191845.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T205517.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-21T110057.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-24T064859.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-24T171257.yml:
+  front-door-ai/2026-09-17.yml:
+    method: unknown
+    evidence: no authorship recorded
+  kin/checks-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-08-25T125852.yml:
@@ -228,6 +111,123 @@ artifacts:
   kin/score-2026-09-05T072335.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T144739.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T195450.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T211839.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T011047.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T211804.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T224210.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-07T200636.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-07T213054.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-08T214843.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-08T232836.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-10T204815.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-10T222408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T062655.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T080032.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T204651.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T221936.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-13T214537.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T064754.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T210656.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T225847.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-15T211329.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-15T230249.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-16T210549.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-16T225339.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-17T211151.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-17T233623.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-18T205255.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-18T231945.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-19T165737.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-19T193153.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-20T205903.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-20T232958.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-21T211425.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-21T233935.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-22T213221.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-23T000603.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T064009.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T090406.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T161608.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   lifecycle/edda-lifecycle.yml:
     method: derived
     evidence: declared in the artifact
@@ -237,42 +237,6 @@ artifacts:
   mcp/edda-mcp.yml:
     method: derived
     evidence: declared in the artifact
-  openapi/edda-categories-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/edda-comments-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/edda-embed-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/edda-media-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/edda-pages-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/edda-posts-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/edda-search-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/edda-statuses-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/edda-tags-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/edda-taxonomies-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/edda-types-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/edda-users-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
   openapi/edda-wordpress-rest-discovery.json:
     method: unknown
     evidence: no authorship recorded
