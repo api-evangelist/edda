@@ -1,4 +1,4 @@
-# EDDA
+# EDDA Technology
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,6 +64,116 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-EDDA is a company surfaced as a portfolio company of softbank-vision-fund and added to the API Evangelist network as a stub for enrichment. Sector: health-tech. This profile is a lead awaiting the enrichment pipeline.
+EDDA Technology, Inc. is a Princeton, New Jersey medical imaging software company behind the IQQA platform for computer-assisted radiology and surgery. IQQA delivers 3D quantitative image analysis, automated segmentation and volumetric measurement over CT and MR studies, supporting pre-surgical planning and simulation, intra-operative guidance and monitoring, post-operative follow-up evaluation, and clinical training across liver, lung, kidney and interventional oncology. Products include IQQA-BodyImaging, IQQA-Guide, IQQA-Chest, IQQA-Liver, IQQA-Liver Function, IQQA-eQMR and the IQQA-eFusion edge-AI surgical navigation system. The company is FDA cleared and CE marked under EU MDR 2017/745, and raised a US$150 million round led by SoftBank Vision Fund 2 with OrbiMed participation in April 2021. EDDA publishes no developer API for IQQA — it is regulated medical device software deployed on-premises in hospitals — so the only public API surface catalogued here is the WordPress REST API serving eddatech.com content.
 
-Backed by: softbank-vision-fund
+**Areas:** Company · Health Tech · Medical Imaging · Radiology · Surgery · Oncology · Artificial Intelligence · Medical Devices · Healthcare · Clinical Software
+
+## EDDA Technology on APIs.io
+
+Everything profiled for EDDA Technology is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/edda/](https://apis.io/providers/edda/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [EDDA Technology Website (WordPress REST)](https://apis.io/apis/edda/eddatech-com-website-wordpress-rest/) — The public WordPress REST API (wp-json) of the EDDA Technology website at www.eddatech.com: the route index of the site's content management system,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [edda](https://apis.io/servers/edda/edda/)
+
+#### Collections (13)
+
+Postman and Open Collection request collections.
+
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-categories-api/)
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-comments-api/)
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-embed-api/)
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-media-api/)
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-pages-api/)
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-posts-api/)
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-search-api/)
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-statuses-api/)
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-tags-api/)
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-taxonomies-api/)
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-types-api/)
+- [Moved to /providers/edda/](https://apis.io/collections/edda/open-edda-users-api/)
+- [API Collection](https://apis.io/collections/edda/open-edda-wordpress-rest-discovery/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Edda Wordpress Overlay](https://apis.io/overlays/edda/edda-wordpress-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Edda Authentication](https://apis.io/security/edda/edda-authentication/)
+- [Edda Domain Security](https://apis.io/security/edda/edda-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.eddatech.com/)
+- [Support](https://www.eddatech.com/contact-us/)
+- [Blog](https://www.eddatech.com/press-releases/)
+
+## API Evangelist rating
+
+**Kin Score 15.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 8.3 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 30.4 |
+| Access clarity | 0.0 |
+
+**Agent readiness 17.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 12.5** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/edda/](https://apis.io/providers/edda/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for EDDA Technology: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/edda/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
